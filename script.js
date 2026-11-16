@@ -13,11 +13,28 @@
 
 // Storage & API Configuration
 const STORAGE_KEY = 'urbanthread_chat_history_v3';
-// In production or local server, relative path '' works automatically on any domain or port.
-// Falls back to http://localhost:5000 only if opened via file:// protocol.
-const API_BASE_URL = window.location.protocol.startsWith('http')
-  ? ''
-  : (window.SMARTSUPPORT_API_URL || 'http://localhost:5000');
+
+/**
+ * Smart API Base URL resolver:
+ * - If running on a static dev server (like VS Code Live Server on port 5500/5501/3000/8080) or file://,
+ *   redirects API requests to the active Node.js backend at http://localhost:5000.
+ * - If served directly by the Express backend (localhost:5000) or deployed to production cloud (Render, Railway, etc.),
+ *   uses relative path '' so it works on any domain or port seamlessly.
+ */
+function getApiBaseUrl() {
+  if (window.SMARTSUPPORT_API_URL) return window.SMARTSUPPORT_API_URL;
+  const port = window.location.port;
+  const isStaticDevServer = port === '5500' || port === '5501' || port === '3000' || port === '8080';
+  const isLocalFile = !window.location.protocol.startsWith('http');
+
+  if (isStaticDevServer || isLocalFile) {
+    return 'http://localhost:5000';
+  }
+
+  return '';
+}
+
+const API_BASE_URL = getApiBaseUrl();
 
 // Global State
 let conversationHistory = []; // Array of { role: 'user' | 'model', text: string, timestamp: string, suggestPhoneCall?: boolean }
@@ -74,6 +91,128 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;');
+}
+
+/**
+ * Format markdown and structured text for assistant messages
+ */
+function formatChatMessage(rawText) {
+  if (!rawText) return '';
+  let text = escapeHtml(rawText);
+  text = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+
+  // 1. Break squished headers and list bullets when the LLM outputs single-line text
+  text = text.replace(/([:.!?])\s*(\*\*[A-Z][^*]+?\*\*\s*[:-]?\s*)/g, '$1\n\n$2\n');
+  text = text.replace(/\s+(\*\*[A-Z][^*]+?\*\*\s*-\s*)/g, '\n\n$1\n');
+  text = text.replace(/([^\n])\s+-\s+(?!\d)/g, '$1\n- ');
+  text = text.replace(/([^\n])\s*[•●]\s*/g, '$1\n• ');
+  text = text.replace(/([.!?])\s+(If you have any|Let me know|Feel free|Have any other|Please let me know|Hope this helps)/gi, '$1\n\n$2');
+
+  const lines = text.split('\n');
+  const blocks = [];
+  let currentList = null;
+  let currentParagraph = [];
+
+  function flushParagraph() {
+    if (currentParagraph.length > 0) {
+      const pText = currentParagraph.join('<br>').trim();
+      if (pText) blocks.push(`<p>${pText}</p>`);
+      currentParagraph = [];
+    }
+  }
+
+  function flushList() {
+    if (currentList) {
+      const itemsHtml = currentList.items.map(item => {
+        const textContent = typeof item === 'object' ? item.text : item;
+        const cls = (typeof item === 'object' && item.isSubItem) ? ' class="msg-sub-item"' : '';
+        return `<li${cls}>${textContent}</li>`;
+      }).join('');
+      blocks.push(`<${currentList.type} class="msg-list">${itemsHtml}</${currentList.type}>`);
+      currentList = null;
+    }
+  }
+
+  for (let i = 0; i < lines.length; i++) {
+    const rawLine = lines[i].trim();
+    if (!rawLine) {
+      flushParagraph();
+      flushList();
+      continue;
+    }
+
+    // Markdown Heading: ### Title
+    const headingMatch = rawLine.match(/^#{1,4}\s+(.+)$/);
+    if (headingMatch) {
+      flushParagraph();
+      flushList();
+      blocks.push(`<h4 class="msg-heading">${headingMatch[1]}</h4>`);
+      continue;
+    }
+
+    // Bold section titles: **Delivery timeline:** or **Shipping charges**
+    const boldHeaderMatch = rawLine.match(/^\*\*([^*]+)\*\*:?$/);
+    if (boldHeaderMatch) {
+      flushParagraph();
+      flushList();
+      blocks.push(`<div class="msg-section-header"><strong>${boldHeaderMatch[1]}</strong></div>`);
+      continue;
+    }
+
+    // Check for unordered list item: - item, * item, • item
+    const isSubItem = /^\s{2,}[-*•]/.test(lines[i]);
+    const ulMatch = rawLine.match(/^[-*•]\s+(.+)$/);
+    if (ulMatch) {
+      flushParagraph();
+      if (!currentList || currentList.type !== 'ul') {
+        flushList();
+        currentList = { type: 'ul', items: [] };
+      }
+      currentList.items.push({ text: ulMatch[1], isSubItem });
+      continue;
+    }
+
+    // Check for ordered list item: 1. Item, 2. Item
+    const olMatch = rawLine.match(/^(\d+)[.)]\s+(.+)$/);
+    if (olMatch) {
+      flushParagraph();
+      if (!currentList || currentList.type !== 'ol') {
+        flushList();
+        currentList = { type: 'ol', items: [] };
+      }
+      currentList.items.push({ text: olMatch[2], isSubItem: false });
+      continue;
+    }
+
+    // Plain paragraph text line
+    flushList();
+    currentParagraph.push(rawLine);
+  }
+
+  flushParagraph();
+  flushList();
+
+  let formatted = blocks.join('');
+
+  // Inline styling:
+  // Bold: **text** or __text__
+  formatted = formatted.replace(/\*\*(.+?)\*\*/g, '<strong class="msg-bold">$1</strong>');
+  formatted = formatted.replace(/__(.+?)__/g, '<strong class="msg-bold">$1</strong>');
+
+  // Italic: *text* or _text_
+  formatted = formatted.replace(/(^|[^\*])\*([^\*]+?)\*([^\*]|$)/g, '$1<em>$2</em>$3');
+  formatted = formatted.replace(/(^|[^_])_([^_]+?)_([^_]|$)/g, '$1<em>$2</em>$3');
+
+  // Code snippets: `code`
+  formatted = formatted.replace(/`([^`]+)`/g, '<code class="msg-code">$1</code>');
+
+  // Markdown links: [text](url)
+  formatted = formatted.replace(/\[([^\]]+)\]\((https?:\/\/[^\)]+)\)/g, '<a href="$2" target="_blank" rel="noopener" class="msg-link">$1</a>');
+
+  // Price badge highlight: ₹999 or ₹ 79
+  formatted = formatted.replace(/(₹\s?\d+(?:,\d+)*(?:\.\d+)?)/g, '<span class="msg-price">$1</span>');
+
+  return formatted || escapeHtml(rawText);
 }
 
 /**
@@ -214,7 +353,12 @@ function appendMessage(sender, text, timestamp = getCurrentTime(), suggestPhoneC
   const msgRow = document.createElement('div');
   msgRow.className = `msg-row ${sender}`;
 
-  let innerHTML = `<div class="msg-bubble">${escapeHtml(text)}</div>`;
+  const formattedContent = sender === 'model'
+    ? formatChatMessage(text)
+    : escapeHtml(text).replace(/\n/g, '<br>');
+
+  const errorClass = isError ? ' is-error' : '';
+  let innerHTML = `<div class="msg-bubble${errorClass}">${formattedContent}</div>`;
 
   // If the AI suggests calling phone support
   if (suggestPhoneCall) {
