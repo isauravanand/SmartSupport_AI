@@ -58,6 +58,14 @@ const bolnaCallActionBtn = document.getElementById('bolnaCallActionBtn');
 const bolnaPhoneDisplay = document.getElementById('bolnaPhoneDisplay');
 const footerPhoneDisplay = document.getElementById('footerPhoneDisplay');
 
+// DOM Elements - Mobile Navigation Drawer
+const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+const menuOpenIcon = document.getElementById('menuOpenIcon');
+const menuCloseIcon = document.getElementById('menuCloseIcon');
+const drawerVoiceBtn = document.getElementById('drawerVoiceBtn');
+const drawerChatBtn = document.getElementById('drawerChatBtn');
+
 // DOM Elements - Chat Stream & Input
 const chatMessages = document.getElementById('chatMessages');
 const chatForm = document.getElementById('chatForm');
@@ -575,6 +583,41 @@ function closeVoiceModal() {
  * Setup Event Listeners
  */
 function setupEventListeners() {
+  // Mobile Menu Drawer Triggers
+  function toggleMobileMenu(forceState) {
+    if (!mobileNavDrawer) return;
+    const shouldOpen = forceState !== undefined ? forceState : !mobileNavDrawer.classList.contains('active');
+    mobileNavDrawer.classList.toggle('active', shouldOpen);
+    mobileNavDrawer.setAttribute('aria-hidden', !shouldOpen);
+    if (mobileMenuToggle) {
+      mobileMenuToggle.setAttribute('aria-expanded', shouldOpen);
+    }
+    if (menuOpenIcon) menuOpenIcon.style.display = shouldOpen ? 'none' : 'block';
+    if (menuCloseIcon) menuCloseIcon.style.display = shouldOpen ? 'block' : 'none';
+  }
+
+  if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener('click', () => toggleMobileMenu());
+  }
+
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => toggleMobileMenu(false));
+  });
+
+  if (drawerVoiceBtn) {
+    drawerVoiceBtn.addEventListener('click', () => {
+      toggleMobileMenu(false);
+      openVoiceModal();
+    });
+  }
+
+  if (drawerChatBtn) {
+    drawerChatBtn.addEventListener('click', () => {
+      toggleMobileMenu(false);
+      openChatPanel();
+    });
+  }
+
   // Floating Widget Triggers
   if (dockChatTrigger) {
     dockChatTrigger.addEventListener('click', toggleChatPanel);

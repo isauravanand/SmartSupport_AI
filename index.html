@@ -48,7 +48,7 @@
         <!-- Quick Voice Help Button -->
         <button type="button" class="btn-nav-voice" id="navVoiceBtn" title="Call AI Voice Support">
           <i data-lucide="phone-call" style="width: 15px; height: 15px;"></i>
-          <span>Voice Support</span>
+          <span class="nav-voice-label">Voice Support</span>
         </button>
 
         <!-- Cart Bag Trigger -->
@@ -56,8 +56,33 @@
           <i data-lucide="shopping-bag" style="width: 18px; height: 18px;"></i>
           <span class="bag-count" id="bagCount">0</span>
         </button>
+
+        <!-- Mobile Menu Toggle Hamburger Button -->
+        <button type="button" class="btn-mobile-menu" id="mobileMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <i data-lucide="menu" id="menuOpenIcon" style="width: 20px; height: 20px;"></i>
+          <i data-lucide="x" id="menuCloseIcon" style="width: 20px; height: 20px; display: none;"></i>
+        </button>
       </div>
 
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+      <nav class="mobile-nav-links">
+        <a href="#tshirts-catalog" class="mobile-nav-link active">T-Shirts Collection</a>
+        <a href="#craftsmanship" class="mobile-nav-link">Craftsmanship (240 GSM)</a>
+        <a href="#size-guide" class="mobile-nav-link">Size &amp; Fit Guide</a>
+        <a href="#collections" class="mobile-nav-link">Streetwear Drops</a>
+        <div class="mobile-nav-divider"></div>
+        <button type="button" class="mobile-drawer-btn" id="drawerVoiceBtn">
+          <i data-lucide="phone-call" style="width: 15px; height: 15px;"></i>
+          <span>Voice Support (Bolna AI)</span>
+        </button>
+        <button type="button" class="mobile-drawer-btn mobile-drawer-btn-chat" id="drawerChatBtn">
+          <i data-lucide="message-square" style="width: 15px; height: 15px;"></i>
+          <span>Chat with AI Stylist</span>
+        </button>
+      </nav>
     </div>
   </header>
 
