@@ -1,0 +1,26 @@
+{
+  "name": "smartsupport-ai-backend",
+  "version": "1.0.0",
+  "description": "Node.js and Express.js REST API Backend for Smart Customer Support & Voice Agent",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "@google/genai": "^3.3.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "groq-sdk": "^1.6.0"
+  },
+  "keywords": [
+    "customer-support",
+    "voice-agent",
+    "express",
+    "nodejs",
+    "rest-api"
+  ],
+  "author": "SmartSupport AI Team",
+  "license": "ISC"
+}

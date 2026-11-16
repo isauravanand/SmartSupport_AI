@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URBANTHREAD — Heavyweight Streetwear & Contemporary Apparel</title>
+  <meta name="description" content="UrbanThread brings you 240 GSM heavyweight combed cotton oversized t-shirts, streetwear essentials, and contemporary apparel. 3–7 day delivery across India.">
+  
+  <!-- Google Fonts: Syne & Plus Jakarta Sans for high-fashion streetwear editorial aesthetic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="dark-theme">
+
+  <!-- 1. Top Announcement Marquee -->
+  <div class="announcement-bar">
+    <div class="marquee-track">
+      <span>DROP 04 IS LIVE • HEAVYWEIGHT 240 GSM COMBED COTTON • COMPLIMENTARY SHIPPING OVER ₹999 • CASH ON DELIVERY AVAILABLE • 7-DAY EASY RETURNS &amp; SIZE EXCHANGES • DROP 04 IS LIVE • HEAVYWEIGHT 240 GSM COMBED COTTON • COMPLIMENTARY SHIPPING OVER ₹999 • CASH ON DELIVERY AVAILABLE</span>
+    </div>
+  </div>
+
+  <!-- 2. Main Store Navigation Header -->
+  <header class="store-header" id="storeHeader">
+    <div class="container nav-container">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="brand-identity">
+        <span class="brand-wordmark">URBANTHREAD</span>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="#tshirts-catalog" class="nav-link active">T-Shirts</a>
+        <a href="#collections" class="nav-link">Hoodies</a>
+        <a href="#collections" class="nav-link">Denim</a>
+        <a href="#craftsmanship" class="nav-link">240 GSM</a>
+        <a href="#size-guide" class="nav-link">Size Guide</a>
+      </nav>
+
+      <!-- Right Utility Actions -->
+      <div class="nav-actions">
+        <!-- Quick Voice Help Button -->
+        <button type="button" class="btn-nav-voice" id="navVoiceBtn" title="Call AI Voice Support">
+          <i data-lucide="phone-call" style="width: 15px; height: 15px;"></i>
+          <span>Voice Support</span>
+        </button>
+
+        <!-- Cart Bag Trigger -->
+        <button type="button" class="btn-nav-bag" id="bagBtn" title="Shopping Bag">
+          <i data-lucide="shopping-bag" style="width: 18px; height: 18px;"></i>
+          <span class="bag-count" id="bagCount">0</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- 3. Hero Streetwear Banner -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="hero-meta-badge">
+          <span class="live-dot"></span>
+          <span>SEASON 2026 // DROP 04</span>
+        </div>
+        <h1 class="hero-headline">
+          RAW STREETWEAR.<br>
+          <span>HEAVYWEIGHT CUTS.</span>
+        </h1>
+        <p class="hero-description">
+          Engineered in 240 GSM bio-washed combed cotton with structured boxy drop-shoulders. 
+          Built for daily street comfort, zero shrinkage, and enduring silhouettes.
+        </p>
+        <div class="hero-cta-group">
+          <a href="#tshirts-catalog" class="btn-primary-dark">
+            <span>EXPLORE TEES COLLECTION</span>
+            <i data-lucide="arrow-down-right" style="width: 18px; height: 18px;"></i>
+          </a>
+          <button type="button" class="btn-secondary-dark" id="heroChatTrigger">
+            <i data-lucide="message-square" style="width: 16px; height: 16px;"></i>
+            <span>ASK AI STYLIST &amp; SIZING</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Hero Trust Highlights -->
+      <div class="hero-perks-row">
+        <div class="hero-perk-item">
+          <i data-lucide="sparkles" style="width: 16px; height: 16px;"></i>
+          <span>240 GSM Heavyweight Jersey</span>
+        </div>
+        <div class="hero-perk-item">
+          <i data-lucide="shield-check" style="width: 16px; height: 16px;"></i>
+          <span>Pre-Shrunk Bio-Washed</span>
+        </div>
+        <div class="hero-perk-item">
+          <i data-lucide="truck" style="width: 16px; height: 16px;"></i>
+          <span>3–7 Day Pan-India Dispatch</span>
+        </div>
+        <div class="hero-perk-item">
+          <i data-lucide="rotate-ccw" style="width: 16px; height: 16px;"></i>
+          <span>7-Day Returns &amp; Free Exchange</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Featured T-Shirts Catalog Section -->
+  <section class="catalog-section" id="tshirts-catalog">
+    <div class="container">
+      
+      <div class="section-header-row">
+        <div>
+          <span class="section-subtitle">THE CORE T-SHIRT COLLECTION</span>
+          <h2 class="section-title">BOX FITS &amp; HEAVYWEIGHTS</h2>
+        </div>
+        
+        <!-- Filter Tabs -->
+        <div class="filter-pills" id="filterPills">
+          <button type="button" class="filter-pill active" data-filter="all">All Tees (6)</button>
+          <button type="button" class="filter-pill" data-filter="oversized">Oversized Boxy</button>
+          <button type="button" class="filter-pill" data-filter="acid">Vintage Washes</button>
+          <button type="button" class="filter-pill" data-filter="minimal">Minimal Solids</button>
+        </div>
+      </div>
+
+      <!-- T-Shirts Product Grid -->
+      <div class="product-grid" id="productGrid">
+        
+        <!-- Product 1 -->
+        <article class="product-card" data-category="oversized" data-product-id="1">
+          <div class="product-image-wrap">
+            <img 
+              src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&q=80" 
+              alt="Heavyweight Boxy Tee Washed Onyx"
+              class="product-img"
+              loading="lazy"
+            >
+            <div class="product-tag-badge">BESTSELLER • 240 GSM</div>
+            <button type="button" class="quick-add-btn" data-title="Heavyweight Boxy Tee - Washed Onyx" data-price="799">
+              <i data-lucide="plus" style="width: 14px; height: 14px;"></i>
+              <span>Quick Add</span>
+            </button>
+          </div>
+          <div class="product-info">
+            <div class="product-meta-sub">100% Combed Cotton • Drop Shoulder</div>
+            <h3 class="product-name">Heavyweight Boxy Tee — Washed Onyx</h3>
+            <div class="product-price-row">
+              <span class="price-current">₹799</span>
+              <span class="price-original">₹1,199</span>
+              <span class="price-discount">33% OFF</span>
+            </div>
+            <!-- Size Pills -->
+            <div class="size-pill-row">
+              <span class="size-pill">S</span>
+              <span class="size-pill active">M</span>
+              <span class="size-pill">L</span>
+              <span class="size-pill">XL</span>
+              <span class="size-pill">XXL</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 2 -->
+        <article class="product-card" data-category="minimal" data-product-id="2">
+          <div class="product-image-wrap">
+            <img 
+              src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80" 
+              alt="Raw Hem Minimalist Tee Bone White"
+              class="product-img"
+              loading="lazy"
+            >
+            <div class="product-tag-badge">NEW DROP • 220 GSM</div>
+            <button type="button" class="quick-add-btn" data-title="Raw Hem Tee - Bone White" data-price="699">
+              <i data-lucide="plus" style="width: 14px; height: 14px;"></i>
+              <span>Quick Add</span>
+            </button>
+          </div>
+          <div class="product-info">
+            <div class="product-meta-sub">Organic Jersey • Relaxed Cut</div>
+            <h3 class="product-name">Raw Hem Minimalist Tee — Bone White</h3>
+            <div class="product-price-row">
+              <span class="price-current">₹699</span>
+              <span class="price-original">₹999</span>
+              <span class="price-discount">30% OFF</span>
+            </div>
+            <div class="size-pill-row">
+              <span class="size-pill">XS</span>
+              <span class="size-pill">S</span>
+              <span class="size-pill active">M</span>
+              <span class="size-pill">L</span>
+              <span class="size-pill">XL</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 3 -->
+        <article class="product-card" data-category="oversized" data-product-id="3">
+          <div class="product-image-wrap">
+            <img 
+              src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80" 
+              alt="Arch Logo Graphic Tee Vintage Charcoal"
+              class="product-img"
+              loading="lazy"
+            >
+            <div class="product-tag-badge">CAPSULE DROP</div>
+            <button type="button" class="quick-add-btn" data-title="Arch Logo Graphic Tee - Vintage Charcoal" data-price="899">
+              <i data-lucide="plus" style="width: 14px; height: 14px;"></i>
+              <span>Quick Add</span>
+            </button>
+          </div>
+          <div class="product-info">
+            <div class="product-meta-sub">Screenprint Puff Ink • 240 GSM</div>
+            <h3 class="product-name">Arch Logo Graphic Tee — Vintage Charcoal</h3>
+            <div class="product-price-row">
+              <span class="price-current">₹899</span>
+              <span class="price-original">₹1,299</span>
+              <span class="price-discount">31% OFF</span>
+            </div>
+            <div class="size-pill-row">
+              <span class="size-pill">S</span>
+              <span class="size-pill active">M</span>
+              <span class="size-pill">L</span>
+              <span class="size-pill">XL</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 4 -->
+        <article class="product-card" data-category="acid" data-product-id="4">
+          <div class="product-image-wrap">
+            <img 
+              src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=800&q=80" 
+              alt="Mineral Wash Distressed Tee Slate Grey"
+              class="product-img"
+              loading="lazy"
+            >
+            <div class="product-tag-badge">MINERAL WASH</div>
+            <button type="button" class="quick-add-btn" data-title="Mineral Wash Tee - Slate Grey" data-price="799">
+              <i data-lucide="plus" style="width: 14px; height: 14px;"></i>
+              <span>Quick Add</span>
+            </button>
+          </div>
+          <div class="product-info">
+            <div class="product-meta-sub">Silicon Washed • Vintage Hand-Feel</div>
+            <h3 class="product-name">Mineral Wash Boxy Tee — Slate Grey</h3>
+            <div class="product-price-row">
+              <span class="price-current">₹799</span>
+              <span class="price-original">₹1,149</span>
+              <span class="price-discount">30% OFF</span>
+            </div>
+            <div class="size-pill-row">
+              <span class="size-pill">S</span>
+              <span class="size-pill">M</span>
+              <span class="size-pill active">L</span>
+              <span class="size-pill">XL</span>
+              <span class="size-pill">XXL</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 5 -->
+        <article class="product-card" data-category="minimal" data-product-id="5">
+          <div class="product-image-wrap">
+            <img 
+              src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=800&q=80" 
+              alt="Structured High-Rib Tee Pitch Black"
+              class="product-img"
+              loading="lazy"
+            >
+            <div class="product-tag-badge">ESSENTIAL CUT</div>
+            <button type="button" class="quick-add-btn" data-title="Structured High-Rib Tee - Pitch Black" data-price="849">
+              <i data-lucide="plus" style="width: 14px; height: 14px;"></i>
+              <span>Quick Add</span>
+            </button>
+          </div>
+          <div class="product-info">
+            <div class="product-meta-sub">Reinforced Collar • 240 GSM French Knit</div>
+            <h3 class="product-name">Structured High-Rib Tee — Pitch Black</h3>
+            <div class="product-price-row">
+              <span class="price-current">₹849</span>
+              <span class="price-original">₹1,249</span>
+              <span class="price-discount">32% OFF</span>
+            </div>
+            <div class="size-pill-row">
+              <span class="size-pill">S</span>
+              <span class="size-pill active">M</span>
+              <span class="size-pill">L</span>
+              <span class="size-pill">XL</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 6 -->
+        <article class="product-card" data-category="minimal" data-product-id="6">
+          <div class="product-image-wrap">
+            <img 
+              src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=800&q=80" 
+              alt="Everyday Staple Crew Melange Grey"
+              class="product-img"
+              loading="lazy"
+            >
+            <div class="product-tag-badge">EVERYDAY STAPLE</div>
+            <button type="button" class="quick-add-btn" data-title="Everyday Staple Crew - Melange Grey" data-price="499">
+              <i data-lucide="plus" style="width: 14px; height: 14px;"></i>
+              <span>Quick Add</span>
+            </button>
+          </div>
+          <div class="product-info">
+            <div class="product-meta-sub">180 GSM Pure Combed Cotton • Standard Fit</div>
+            <h3 class="product-name">The Everyday Staple Crew — Melange Grey</h3>
+            <div class="product-price-row">
+              <span class="price-current">₹499</span>
+              <span class="price-original">₹799</span>
+              <span class="price-discount">37% OFF</span>
+            </div>
+            <div class="size-pill-row">
+              <span class="size-pill">XS</span>
+              <span class="size-pill">S</span>
+              <span class="size-pill active">M</span>
+              <span class="size-pill">L</span>
+              <span class="size-pill">XL</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. Brand Craftsmanship & The 240 GSM Standard -->
+  <section class="craftsmanship-section" id="craftsmanship">
+    <div class="container">
+      <div class="craftsmanship-header">
+        <span class="section-subtitle">THE URBANTHREAD SPECIFICATION</span>
+        <h2 class="section-title">WHY WE BUILD IN 240 GSM</h2>
+        <p class="craftsmanship-intro">
+          Fast fashion t-shirts warp, shrink, and fade in 3 washes. We mill high-twist compact combed cotton that maintains its structural drape year after year.
+        </p>
+      </div>
+
+      <div class="spec-grid">
+        <div class="spec-card">
+          <div class="spec-num">01</div>
+          <h3 class="spec-title">Heavyweight Structure</h3>
+          <p class="spec-desc">240 GSM French terry and jersey weight gives a distinct architectural drape that never clings or wrinkles awkwardly.</p>
+        </div>
+
+        <div class="spec-card">
+          <div class="spec-num">02</div>
+          <h3 class="spec-title">Bio-Washed &amp; Pre-Shrunk</h3>
+          <p class="spec-desc">Subjected to natural enzyme wash to eliminate surface lint and pre-shrunk so your size stays true from day 1 to day 500.</p>
+        </div>
+
+        <div class="spec-card">
+          <div class="spec-num">03</div>
+          <h3 class="spec-title">Reinforced Lycra Rib Collar</h3>
+          <p class="spec-desc">1x1 heavy ribbed collar with 5% elastane prevents neck stretching and bacon-collars, staying crisp wear after wear.</p>
+        </div>
+
+        <div class="spec-card">
+          <div class="spec-num">04</div>
+          <h3 class="spec-title">Pan-India Express Dispatch</h3>
+          <p class="spec-desc">Every piece is dispatched from our Indiranagar Bengaluru warehouse within 24 hours. Delivered across India in 3–7 business days.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Full Catalog Range Showcase (Hoodies, Denim, Jackets) -->
+  <section class="collections-section" id="collections">
+    <div class="container">
+      <div class="section-header-row">
+        <div>
+          <span class="section-subtitle">EXPLORE THE FULL WARDROBE</span>
+          <h2 class="section-title">OTHER CATEGORIES</h2>
+        </div>
+      </div>
+
+      <div class="categories-grid">
+        <div class="category-banner-card">
+          <div class="category-banner-overlay"></div>
+          <div class="category-banner-content">
+            <span class="category-tag">320 GSM FLEECE</span>
+            <h3 class="category-heading">Hoodies &amp; Sweats</h3>
+            <p class="category-price-info">Drop-shoulder pullovers &bull; ₹999 – ₹1,799</p>
+          </div>
+        </div>
+
+        <div class="category-banner-card">
+          <div class="category-banner-overlay"></div>
+          <div class="category-banner-content">
+            <span class="category-tag">PREMIUM STRETCH DENIM</span>
+            <h3 class="category-heading">Straight &amp; Relaxed Jeans</h3>
+            <p class="category-price-info">Vintage washed Japanese denim &bull; ₹1,199 – ₹2,199</p>
+          </div>
+        </div>
+
+        <div class="category-banner-card">
+          <div class="category-banner-overlay"></div>
+          <div class="category-banner-content">
+            <span class="category-tag">OUTERWEAR</span>
+            <h3 class="category-heading">Varsity &amp; Denim Jackets</h3>
+            <p class="category-price-info">Utility trucker &amp; bombers &bull; ₹1,499 – ₹3,499</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Size Guide Section -->
+  <section class="size-guide-section" id="size-guide">
+    <div class="container">
+      <div class="size-guide-box">
+        <div class="size-guide-header">
+          <div>
+            <span class="section-subtitle">PERFECT FIT GUARANTEE</span>
+            <h2 class="section-title">T-SHIRT SIZE CHART (BOX FIT)</h2>
+          </div>
+          <p class="size-note">Our cuts are designed for a relaxed boxy drape. Pick your true size for relaxed fit, or size down for standard fitted look.</p>
+        </div>
+
+        <div class="table-responsive">
+          <table class="size-table">
+            <thead>
+              <tr>
+                <th>Size</th>
+                <th>Chest (Inches)</th>
+                <th>Length (Inches)</th>
+                <th>Shoulder (Inches)</th>
+                <th>Fit Profile</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>XS</strong></td>
+                <td>36" – 38"</td>
+                <td>27.0"</td>
+                <td>18.5"</td>
+                <td>Slim / Compact</td>
+              </tr>
+              <tr>
+                <td><strong>S</strong></td>
+                <td>38" – 40"</td>
+                <td>28.0"</td>
+                <td>19.5"</td>
+                <td>Relaxed Fit</td>
+              </tr>
+              <tr>
+                <td><strong>M</strong></td>
+                <td>40" – 42"</td>
+                <td>29.0"</td>
+                <td>20.5"</td>
+                <td>Standard Boxy (Most Popular)</td>
+              </tr>
+              <tr>
+                <td><strong>L</strong></td>
+                <td>42" – 44"</td>
+                <td>30.0"</td>
+                <td>21.5"</td>
+                <td>Oversized Streetwear</td>
+              </tr>
+              <tr>
+                <td><strong>XL</strong></td>
+                <td>44" – 46"</td>
+                <td>31.0"</td>
+                <td>22.5"</td>
+                <td>Heavy Oversized</td>
+              </tr>
+              <tr>
+                <td><strong>XXL</strong></td>
+                <td>46" – 48"</td>
+                <td>32.0"</td>
+                <td>23.5"</td>
+                <td>Max Drape Silhouette</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Footer Section -->
+  <footer class="store-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div class="footer-brand-col">
+          <span class="footer-wordmark">URBANTHREAD</span>
+          <p class="footer-bio">
+            UrbanThread is an independent Indian streetwear label crafting heavyweight essentials, premium denim, and oversized silhouettes for modern youth culture.
+          </p>
+          <div class="footer-address">
+            <i data-lucide="map-pin" style="width: 15px; height: 15px;"></i>
+            <span>42 Fashion Boulevard, Indiranagar, Bengaluru, KA 560038</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Collections</h4>
+          <ul class="footer-links">
+            <li><a href="#tshirts-catalog">T-Shirts (₹499–₹899)</a></li>
+            <li><a href="#collections">Shirts (₹799–₹1,499)</a></li>
+            <li><a href="#collections">Jeans (₹1,199–₹2,199)</a></li>
+            <li><a href="#collections">Hoodies (₹999–₹1,799)</a></li>
+            <li><a href="#collections">Jackets (₹1,499–₹3,499)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" onclick="openChatWithPrompt('What is your return and refund policy?')">7-Day Return Policy</a></li>
+            <li><a href="javascript:void(0)" onclick="openChatWithPrompt('What are your delivery timelines and shipping charges?')">3–7 Day Delivery Policy</a></li>
+            <li><a href="javascript:void(0)" onclick="openChatWithPrompt('Can I exchange an item for a different size?')">Free Size Exchanges</a></li>
+            <li><a href="javascript:void(0)" onclick="openChatWithPrompt('Do you offer Cash on Delivery (COD) and UPI payments?')">Payments &amp; COD Support</a></li>
+            <li><a href="#size-guide">Size &amp; Fit Guide</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Contact &amp; Telephony</h4>
+          <p class="footer-contact-item">
+            <i data-lucide="phone" style="width: 14px; height: 14px;"></i>
+            <a href="tel:+918005558722" id="footerPhoneDisplay">+91 (800) 555-8722</a>
+          </p>
+          <p class="footer-contact-item">
+            <i data-lucide="mail" style="width: 14px; height: 14px;"></i>
+            <a href="mailto:support@urbanthread.in" id="footerEmailDisplay">support@urbanthread.in</a>
+          </p>
+          <p class="footer-hours">
+            <strong>Human Support Hours:</strong><br>
+            Mon–Sat: 10:00 AM – 7:00 PM IST<br>
+            <span class="ai-pill">24/7 AI Chat &amp; Voice Telephony Active</span>
+          </p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p>&copy; 2026 URBANTHREAD APPAREL PRIVATE LIMITED. ALL RIGHTS RESERVED.</p>
+        <div class="payment-badges">
+          <span class="pay-pill">UPI</span>
+          <span class="pay-pill">GPay</span>
+          <span class="pay-pill">PhonePe</span>
+          <span class="pay-pill">RuPay</span>
+          <span class="pay-pill">Visa / MC</span>
+          <span class="pay-pill">COD Available</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       BOTTOM RIGHT FLOATING WIDGET DOCK (CHATBOT & BOLNA AI VOICE SUPPORT)
+       ========================================================================== -->
+  <div class="floating-widget-dock" id="floatingWidgetDock">
+    
+    <!-- 1. Bolna.ai Automated Phone Support Trigger Button -->
+    <button type="button" class="dock-btn dock-btn-voice" id="dockVoiceTrigger" title="Call AI Voice Support (Bolna.ai)" aria-label="Call AI Voice Support">
+      <i data-lucide="phone" style="width: 15px; height: 15px;"></i>
+      <span class="dock-label">Voice Call</span>
+    </button>
+
+    <!-- 2. AI Chatbot Trigger Button -->
+    <button type="button" class="dock-btn dock-btn-chat" id="dockChatTrigger" title="Chat with AI Stylist & Support Concierge" aria-label="Open AI Support Chat">
+      <i data-lucide="message-square" style="width: 15px; height: 15px;"></i>
+      <span class="dock-label">AI Concierge</span>
+      <span class="dock-status-dot"></span>
+    </button>
+
+  </div>
+
+  <!-- ==========================================================================
+       POPUP 1: BOLNA.AI PHONE SUPPORT MODAL
+       ========================================================================== -->
+  <div class="bolna-modal-overlay" id="bolnaModalOverlay" aria-hidden="true">
+    <div class="bolna-voice-card" role="dialog" aria-labelledby="bolnaTitle">
+      
+      <div class="bolna-card-header">
+        <div class="bolna-header-left">
+          <div class="bolna-icon-box">
+            <i data-lucide="phone-call" style="width: 22px; height: 22px;"></i>
+          </div>
+          <div>
+            <div class="bolna-chip">BOLNA.AI TELEPHONY</div>
+            <h3 class="bolna-title" id="bolnaTitle">Automated AI Voice Agent</h3>
+          </div>
+        </div>
+        <button type="button" class="btn-close-modal" id="closeBolnaModal" aria-label="Close Voice Support">
+          <i data-lucide="x" style="width: 18px; height: 18px;"></i>
+        </button>
+      </div>
+
+      <div class="bolna-card-body">
+        <p class="bolna-pitch">
+          Prefer talking over the phone? Call our automated customer care line powered by <strong>Bolna.ai</strong>. 
+          Speak naturally in English or Hindi to inquire about T-shirt sizes, track your delivery, or request returns.
+        </p>
+
+        <!-- Clickable Direct Telephone Action Button -->
+        <a id="bolnaCallActionBtn" href="tel:+918005558722" class="bolna-call-btn">
+          <div class="call-btn-inner">
+            <i data-lucide="phone" style="width: 22px; height: 22px;"></i>
+            <div>
+              <span class="call-btn-label">Tap to Call Our Voice Agent</span>
+              <span class="call-btn-phone" id="bolnaPhoneDisplay">+91 (800) 555-8722</span>
+            </div>
+          </div>
+          <span class="call-badge">TOLL FREE</span>
+        </a>
+
+        <div class="bolna-perks">
+          <div class="perk-row">
+            <i data-lucide="check-circle" style="width: 15px; height: 15px; color: #a3e635;"></i>
+            <span>Zero hold times &bull; Instant voice response</span>
+          </div>
+          <div class="perk-row">
+            <i data-lucide="check-circle" style="width: 15px; height: 15px; color: #a3e635;"></i>
+            <span>Understands size guidance, delivery timelines &amp; COD</span>
+          </div>
+          <div class="perk-row">
+            <i data-lucide="check-circle" style="width: 15px; height: 15px; color: #a3e635;"></i>
+            <span>Human escalation available Mon–Sat, 10 AM–7 PM IST</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bolna-card-footer">
+        <span>Powered by Bolna.ai Voice Agent</span>
+        <button type="button" class="btn-switch-to-chat" id="switchToChatBtn">
+          <i data-lucide="message-square" style="width: 14px; height: 14px;"></i>
+          <span>Or Chat Online</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       POPUP 2: SLIDE-UP AI CHATBOT WINDOW (GEMINI AI INTEGRATION)
+       ========================================================================== -->
+  <div class="chat-widget-panel" id="chatWidgetPanel" role="region" aria-label="Customer Care Chat Window">
+    
+    <!-- Chat Header -->
+    <div class="chat-widget-header">
+      <div class="chat-header-profile">
+        <div class="chat-avatar-glow">
+          <i data-lucide="bot" style="width: 18px; height: 18px;"></i>
+        </div>
+        <div>
+          <div class="chat-header-title">UrbanThread Concierge</div>
+          <div class="chat-header-status">
+            <span class="status-pulse-dot"></span>
+            <span>Online &bull; Gemini Intelligence</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-header-controls">
+        <button type="button" class="chat-control-btn" id="openBolnaFromChatBtn" title="Call Bolna Voice Support">
+          <i data-lucide="phone" style="width: 15px; height: 15px;"></i>
+        </button>
+        <button type="button" class="chat-control-btn" id="clearChatBtn" title="Clear conversation history">
+          <i data-lucide="trash-2" style="width: 15px; height: 15px;"></i>
+        </button>
+        <button type="button" class="chat-control-btn" id="closeChatBtn" title="Close chat window">
+          <i data-lucide="x" style="width: 16px; height: 16px;"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Phone Quick Banner inside Chat -->
+    <div class="chat-quick-voice-banner">
+      <i data-lucide="phone-call" style="width: 14px; height: 14px; color: #a3e635;"></i>
+      <span>Need spoken assistance? Call <a href="tel:+918005558722" class="voice-banner-link">+91 (800) 555-8722</a></span>
+    </div>
+
+    <!-- Messages Container -->
+    <div class="chat-messages-stream" id="chatMessages">
+      <!-- Populated dynamically by script.js -->
+    </div>
+
+    <!-- Suggested Questions Chips Bar -->
+    <div class="suggested-prompts-container" id="suggestedPromptsBar">
+      <!-- Populated dynamically by script.js -->
+    </div>
+
+    <!-- Chat Input Form -->
+    <div class="chat-input-wrapper">
+      <form id="chatForm" class="chat-form">
+        <input 
+          type="text" 
+          id="chatInput" 
+          class="chat-text-input" 
+          placeholder="Ask about 240 GSM tees, sizing, delivery, or returns..."
+          autocomplete="off"
+        >
+        <button type="submit" class="chat-send-btn" id="sendBtn" aria-label="Send message">
+          <i data-lucide="send" style="width: 16px; height: 16px;"></i>
+        </button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Toast Notification for Add to Cart -->
+  <div class="toast-notification" id="toastNotification">
+    <i data-lucide="check" style="width: 16px; height: 16px; color: #a3e635;"></i>
+    <span id="toastText">Item added to your bag</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

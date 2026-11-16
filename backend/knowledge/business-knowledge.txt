@@ -1,0 +1,106 @@
+URBANTHREAD - BUSINESS KNOWLEDGE BASE
+
+DEMONSTRATION NOTICE:
+This file contains fictional demonstration data for "UrbanThread", an online clothing and apparel brand.
+The business owner must verify, customize, and replace this sample data with their actual product catalog, verified pricing, and official company policies before production deployment.
+
+============================================================
+1. BRAND AND BUSINESS OVERVIEW
+============================================================
+Brand Name: UrbanThread
+Business Type: Online clothing and apparel brand specializing in contemporary casual wear, streetwear, and everyday essentials.
+Website: https://urbanthread.in
+Customer Support Email: support@urbanthread.in
+Customer Support Phone: +91 (800) 555-8722
+Headquarters: 42 Fashion Boulevard, Indiranagar, Bengaluru, Karnataka 560038, India
+Support Hours: Monday to Saturday, 10:00 AM - 7:00 PM IST (Sunday Closed)
+Automated AI Website Chatbot and AI Voice Agent available 24/7.
+
+============================================================
+2. PRODUCTS AND PRICING (ALL PRICES INCLUDE GST)
+============================================================
+- T-shirts: Rs. 499 to Rs. 899. 100% combed cotton (180-240 GSM). Regular fit, oversized graphic tees, minimal solids, and ribbed crewnecks. Available in XS, S, M, L, XL, XXL.
+- Shirts: Rs. 799 to Rs. 1,499. Breathable pure linen blends, casual Oxford button-downs, cuban collar resort shirts, and textured overshirts. Available in S, M, L, XL, XXL.
+- Jeans: Rs. 1,199 to Rs. 2,199. Premium denim with 2% elastane stretch. Slim fit, straight leg, relaxed vintage wash, and wide-leg denim. Sizes 28, 30, 32, 34, 36, 38.
+- Hoodies & Sweatshirts: Rs. 999 to Rs. 1,799. 320 GSM brushed fleece-lined cotton. Drop-shoulder pullovers, kangaroo pockets, and zip-up hooded jackets. Available in S, M, L, XL, XXL.
+- Dresses: Rs. 999 to Rs. 2,499. Breathable rayon and cotton blends. Casual A-line midi dresses, tiered sundresses, wrap dresses, and shirt dresses. Available in XS, S, M, L, XL.
+- Jackets & Outerwear: Rs. 1,499 to Rs. 3,499. Classic denim trucker jackets, varsity bomber jackets, utility windbreakers, and transitional zip overshirts. Available in S, M, L, XL, XXL.
+
+============================================================
+3. SIZING AND FIT GUIDANCE
+============================================================
+Standard Sizing Chart:
+- S (Small): 38-inch chest, 30-inch waist
+- M (Medium): 40-inch chest, 32-inch waist
+- L (Large): 42-inch chest, 34-inch waist
+- XL (Extra Large): 44-inch chest, 36-inch waist
+- XXL (Double Extra Large): 46-inch chest, 38-inch waist
+
+Fit Guidance:
+Oversized collection items are designed with an intentionally relaxed, boxy drop-shoulder silhouette. Choose your normal size for an oversized look, or size down for a standard regular fit.
+
+Fabric Care:
+Machine wash cold inside-out with like colors. Do not bleach. Tumble dry low or hang dry in shade. Warm iron inside-out; do not iron directly on printed graphics.
+
+============================================================
+4. DELIVERY AND SHIPPING POLICY
+============================================================
+- Order Processing: Dispatched within 24 to 48 hours on business days.
+- Delivery Timeline: Standard shipping takes 3 to 7 business days across India.
+- Shipping Charges: Free shipping on orders above Rs. 999. Flat Rs. 79 standard shipping fee on orders below Rs. 999.
+- Tracking: Tracking links and AWB numbers are sent via SMS and email upon dispatch.
+
+============================================================
+5. RETURNS AND EXCHANGE POLICY
+============================================================
+- Return Window: Return requests must be placed within 7 days of delivery.
+- Return Conditions: Garments must be unwashed, unworn, undamaged, with all original price tags, labels, and packaging intact.
+- Exchanges: Size and color exchanges are free of charge, subject to stock availability. If the requested size is unavailable, store credit or a full refund is provided.
+- Non-Returnable Items: For hygiene reasons, socks, innerwear, face masks, and clearance Final Sale items cannot be returned.
+- Reverse Pickup: Free reverse doorstep courier pickup arranged across 19,000+ Indian pin codes.
+
+============================================================
+6. REFUND POLICY
+============================================================
+- Inspection: Returned items undergo quality check within 48 hours of warehouse arrival.
+- Refund Timeline: Approved refunds are processed within 5 to 7 business days.
+- Refund Mode: Prepaid orders are refunded to the original payment source (UPI/Cards/Net Banking). COD orders are refunded via direct bank transfer (NEFT/IMPS) or instant store credit voucher.
+
+============================================================
+7. PAYMENT METHODS
+============================================================
+- UPI: Google Pay, PhonePe, Paytm, Cred, BHIM UPI.
+- Cards: Visa, MasterCard, RuPay, American Express credit and debit cards.
+- Net Banking: All major banks.
+- Cash on Delivery (COD): Available for orders between Rs. 499 and Rs. 4,999 with a Rs. 49 cash handling fee.
+
+============================================================
+8. FREQUENTLY ASKED QUESTIONS (FAQS)
+============================================================
+Q: How do I track my order?
+A: An SMS and email with live courier tracking is sent upon dispatch. You can also share your order ID in chat to check current status.
+
+Q: What is your return policy?
+A: You can return items within 7 days of delivery if tags are intact and garments are unwashed and unworn.
+
+Q: How long do refunds take?
+A: Refunds take 5 to 7 business days after the return passes quality inspection at our warehouse.
+
+Q: Can I exchange sizes?
+A: Yes, size exchanges are free subject to stock availability within 7 days of delivery.
+
+Q: Is Cash on Delivery available?
+A: Yes, COD is available for orders between Rs. 499 and Rs. 4,999 in serviceable pin codes for a Rs. 49 handling fee.
+
+Q: How can I reach phone support?
+A: Call our 24/7 automated AI voice support line at +91 (800) 555-8722 or email support@urbanthread.in. Human support specialists are available Monday to Saturday, 10:00 AM to 7:00 PM IST.
+
+Q: Can I cancel or change an order?
+A: Orders can be cancelled or modified within 2 hours of placement before warehouse packing starts.
+
+============================================================
+9. SUPPORT ESCALATION RULES
+============================================================
+- Never invent product inventory, discount coupons, or policies not stated in this document.
+- If information is missing or unverified, politely tell the customer it requires confirmation and provide the support email support@urbanthread.in or phone number +91 (800) 555-8722.
+- For unresolved issues, payment debited without order confirmation, or delivery delays, recommend contacting human support by phone or email.
